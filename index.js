@@ -12,7 +12,6 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-const PORT = process.env.PORT || 5000
 app.use(cors())
 
 
@@ -39,6 +38,4 @@ try {
 
 app.use(routes)
 
-app.listen(PORT, () => {
-    console.log(`Server running on PORT ${PORT}`)
-})
+app.listen(process.env.PORT || 5000)
